@@ -1,0 +1,31 @@
+{
+  "consumer": {
+    "name": "Consumer"
+  },
+  "provider": {
+    "name": "Provider"
+  },
+  "interactions": [
+    {
+      "providerState": "some data exists",
+      "description": "a request",
+      "request": {
+        "method": "get",
+        "path": "/",
+        "query": {
+          "foo": [
+            "bar"
+          ]
+        }
+      },
+      "response": {
+        "status": 200
+      }
+    }
+  ],
+  "metadata": {
+    "pactSpecification": {
+      "version": "2.0.0"
+    }
+  }
+}
