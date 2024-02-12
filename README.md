@@ -98,3 +98,45 @@ Our Scenarios:
 
 - CircleCI
 - GitHUb Actions
+
+### Performance tests with Locust
+
+- Performance test scenario for different endpioints
+
+To run tests use:
+
+- locust -f ./perf_tests/locust.py --headless --users 10 --spawn-rate 10 --run-time 30 --stop-timeout 10s --host https://dummyjson.com
+
+OR
+
+- locust --config locust.conf
+
+To see the real time metrics:
+
+- run docker compose up -d
+- start the grafana and set up the data source to prometheus
+- choose the dashboard: docs https://medium.com/devopsturkiye/locust-real-time-monitoring-with-grafana-66654bb4b32
+
+To use JTL reporter:
+
+- git clone https://github.com/ludeknovy/jtl-reporter.git
+- docker-compose up -d
+- Now open the application in your browser: http://IP_ADDRESS:2020
+- Download jtl_listener.py into your locust project folder.
+
+- Register the listener in your locust test by placing event listener at the very end of the file:
+
+- from jtl_listener import JtlListener
+- 
+```bash
+@events.init.add_listener
+def on_locust_init(environment, **_kwargs):
+    JtlListener(env=environment,  project_name="project name",
+                scenario_name="scenario name",
+                environment="tested envitonment",
+                backend_url="http://IP_ADDRESS")
+```
+- Generate api token in the application and set it as JTL_API_TOKEN env variable.
+
+- After the test finishes you will find a jtl file in logs folder.
+- Docs: https://jtlreporter.site/docs/integrations/locust

@@ -36,7 +36,9 @@ jobs:
     - name: Test with pytest
       run: |
         pytest        
-          
+    - name: Test with pytest
+      run: |
+        locust -f ./perf_tests/locust.py --headless --users 10 --spawn-rate 10 --run-time 30 --stop-timeout 10s --host https://dummyjson.com --csv ./report/locust/example    
     - name: Upload Pytest report to GitHub
       uses: actions/upload-artifact@v3
       with:

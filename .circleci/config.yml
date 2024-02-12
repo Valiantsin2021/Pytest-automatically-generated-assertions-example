@@ -20,7 +20,9 @@ jobs:
       # Run tests
       - run:
           name: Run tests
-          command: pytest
+          command: |
+            pytest
+            locust -f ./perf_tests/locust.py --headless --users 10 --spawn-rate 10 --run-time 30 --stop-timeout 10s --host https://dummyjson.com --csv ./report/locust/example
 
       # Store artifacts
       - store_artifacts:
