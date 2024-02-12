@@ -94,3 +94,6 @@ Our Scenarios:
 
 - Positive testing of a user flow 
 
+### CI
+
+- CircleCI
