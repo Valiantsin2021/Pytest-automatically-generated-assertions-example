@@ -1,5 +1,5 @@
 import requests
-import configparser
+# import configparser
 import pytest
 import allure
 import jsonschema

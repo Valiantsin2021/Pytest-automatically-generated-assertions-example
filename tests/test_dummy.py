@@ -1,5 +1,5 @@
 import requests
-import configparser
+# import configparser
 import pytest
 import allure
 import jsonschema
@@ -8,14 +8,14 @@ from dotenv import load_dotenv
 
 load_dotenv()
 
-config = configparser.ConfigParser()
-config.read("config.ini")
+# config = configparser.ConfigParser()
+# config.read("config.ini")
 os.environ["REQUESTS_CA_BUNDLE"] = ""
 
-api_key = os.getenv("TOKEN") or config.get("API", "TOKEN")
-base_url = os.getenv("BASE_URL") or config.get("API", "BASE_URL")
-email = os.getenv("EMAIL") or config.get("API", "EMAIL")
-password = os.getenv("PASSWORD") or config.get("API", "PASSWORD")
+api_key = os.getenv("TOKEN")
+base_url = os.getenv("BASE_URL")
+email = os.getenv("EMAIL")
+password = os.getenv("PASSWORD")
 headers = {"Authorization": f"Bearer token={api_key}"}
 
 
