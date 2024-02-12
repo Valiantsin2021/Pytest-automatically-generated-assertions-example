@@ -17,15 +17,9 @@ jobs:
 
     runs-on: ubuntu-latest
     env: 
-      TOKEN: ${{ secrets.TOKEN}}
       BASE_URL: ${{ vars.BASE_URL}}
-      OSAKA: ${{ vars.OSAKA}}
-      TOKIO: ${{ vars.TOKIO}}
-      NY: ${{ vars.NY}}
-      EMAIL: ${{ secrets.EMAIL}}
+      USER: ${{ vars.USER}}
       PASSWORD: ${{ secrets.PASSWORD}}
-      FAVORITES_MESSAGE: ${{ vars.FAVORITES_MESSAGE}}
-      PATCHED_FAVORITES_MESSAGE: ${{ vars.PATCHED_FAVORITES_MESSAGE}} 
     steps:
     - uses: actions/checkout@v3
     - name: Set up Python 3.10

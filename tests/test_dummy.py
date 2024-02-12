@@ -12,12 +12,7 @@ load_dotenv()
 # config.read("config.ini")
 os.environ["REQUESTS_CA_BUNDLE"] = ""
 
-api_key = os.getenv("TOKEN")
 base_url = os.getenv("BASE_URL")
-email = os.getenv("EMAIL")
-password = os.getenv("PASSWORD")
-headers = {"Authorization": f"Bearer token={api_key}"}
-
 
 @allure.feature("Test Dummy JSON API")
 class TestClass:

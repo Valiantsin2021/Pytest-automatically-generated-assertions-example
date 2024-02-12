@@ -9,7 +9,6 @@ from dotenv import load_dotenv
 load_dotenv()
 
 token = ""
-api_key = os.getenv("TOKEN")
 base_url = os.getenv("BASE_URL")
 user = os.getenv("USER")
 password = os.getenv("PASSWORD")
