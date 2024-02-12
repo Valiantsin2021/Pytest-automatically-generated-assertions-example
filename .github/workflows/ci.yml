@@ -17,8 +17,10 @@ jobs:
 
     runs-on: ubuntu-latest
     env: 
-      BASE_URL: ${{ vars.BASE_URL}}
-      USER: ${{ vars.USER}}
+      BASE_URL: ${{ secrets.BASE_URL}}
+      USER: ${{ secrets.USER}}
+      PRODUCT: ${{ secrets.PRODUCT}}
+      LIMIT: ${{ secrets.LIMIT}}
       PASSWORD: ${{ secrets.PASSWORD}}
     steps:
     - uses: actions/checkout@v3

@@ -2397,7 +2397,7 @@ class TestClass:
     @allure.severity("blocker")
     def test_search_product(self):
         # Arrange
-        product = os.getenv("PRODUCT") or config.get("API", "PRODUCT")
+        product = os.getenv("PRODUCT")
         # Act
         response_raw = requests.get(f"{base_url}/products/search?q={product}")
         # Assert
