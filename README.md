@@ -26,7 +26,7 @@ deactivate
 ### Setup:
 
 ```bash
-pip install -r requirements.txt.
+pip install -r requirements.txt
 ```
 If you update the libraries version you can freeze update requirements
 ```bash
